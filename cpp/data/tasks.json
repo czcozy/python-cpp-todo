@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "Homework",
+    "priority": 1,
+    "done": true,
+    "created_at": "2026-10-06 12:18",
+    "due_date": null
+  },
+  {
+    "id": 2,
+    "title": "Play games",
+    "priority": 2,
+    "done": false,
+    "created_at": "2026-10-08 12:07",
+    "due_date": null
+  },
+  {
+    "id": 3,
+    "title": "Have a meal",
+    "priority": 1,
+    "done": false,
+    "created_at": "2026-10-08 12:11",
+    "due_date": "2026-10-08"
+  }
+]

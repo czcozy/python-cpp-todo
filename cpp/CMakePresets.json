@@ -1,0 +1,41 @@
+{
+  "version": 3,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 21,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "default",
+      "displayName": "Default (Debug)",
+      "description": "The build directory is fixed at cpp/build so the editor and the terminal share the same one, needing no editor setup.",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
+      }
+    },
+    {
+      "name": "asan",
+      "displayName": "Debug + AddressSanitizer/UBSan",
+      "description": "Uses a separate build-asan directory, dedicated to catching out-of-bounds memory access and undefined behavior.",
+      "inherits": "default",
+      "binaryDir": "${sourceDir}/build-asan",
+      "cacheVariables": {
+        "TODO_ENABLE_SANITIZERS": "ON"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "default",
+      "configurePreset": "default"
+    },
+    {
+      "name": "asan",
+      "configurePreset": "asan"
+    }
+  ]
+}
